@@ -12,6 +12,7 @@
     </TextView>
 
     <EditText
+        android:id="@+id/user_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     </EditText>
@@ -23,6 +24,7 @@
     </TextView>
 
     <EditText
+        android:id="@+id/psd_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword">
@@ -35,9 +37,23 @@
     </TextView>
 
     <EditText
+        android:id="@+id/email_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress">
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone">
+    </TextView>
+
+    <EditText
+        android:id="@+id/phone_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number">
     </EditText>
 
     <Button

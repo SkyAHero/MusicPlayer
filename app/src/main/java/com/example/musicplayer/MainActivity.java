@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             userEdit.setText(user);
             psdEdit.setText(psd);
         }
-        //LAND
+        //SHOW
         land.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                         editor.putBoolean("rember_psd",true);
                     }
                     editor.apply();
-                    Intent intent = new Intent(MainActivity.this,Land.class);
+                    Intent intent = new Intent(MainActivity.this,Show.class);
                     startActivity(intent);
                 }
             }

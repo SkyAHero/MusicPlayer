@@ -13,7 +13,7 @@
             android:name=".Register"
             android:exported="false" />
         <activity
-            android:name=".Land"
+            android:name=".Show"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

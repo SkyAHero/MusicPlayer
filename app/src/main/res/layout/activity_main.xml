@@ -12,8 +12,10 @@
     </TextView>
 
     <EditText
+        android:id="@+id/user_edit"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:maxLength="5">
     </EditText>
 
     <TextView
@@ -23,12 +25,15 @@
     </TextView>
 
     <EditText
+        android:id="@+id/psd_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword">
+        android:inputType="textPassword"
+        android:maxLength="14">
     </EditText>
 
     <CheckBox
+        android:id="@+id/rember_psd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="REMBER">

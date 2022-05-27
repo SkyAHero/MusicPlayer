@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -27,13 +26,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        pre = getSharedPreferences("UsersRem",MODE_PRIVATE);
+        editor = pre.edit();
+
         land = findViewById(R.id.land);
         register = findViewById(R.id.register);
         remberPsd = findViewById(R.id.rember_psd);
         userEdit = findViewById(R.id.user_edit);
         psdEdit = findViewById(R.id.psd_edit);
 
-        pre = PreferenceManager.getDefaultSharedPreferences(this);
         boolean isRem = pre.getBoolean("rember_psd",false);
         if (isRem){
             String user = pre.getString("user","");
@@ -45,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         land.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = userEdit.getText().toString();
-                String password = psdEdit.getText().toString();
+                String user = userEdit.getText().toString().trim();
+                String password = psdEdit.getText().toString().trim();
                 if (user.equals("") || password.equals("")){
                     Toast.makeText(MainActivity.this, "PLEASE INPUT", Toast.LENGTH_SHORT).show();
                 } else if (password.length()<8){
@@ -56,9 +57,10 @@ public class MainActivity extends AppCompatActivity {
                         editor.putString("user",user);
                         editor.putString("password",password);
                         editor.putBoolean("rember_psd",true);
+                        editor.commit();
                     }
-                    editor.apply();
                     Intent intent = new Intent(MainActivity.this,Show.class);
+                    intent.putExtra("user",user);
                     startActivity(intent);
                 }
             }
